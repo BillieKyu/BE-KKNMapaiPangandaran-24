@@ -1,8 +1,24 @@
 {
+  "name": "be-kknmapaipangandaran-24",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon ./src/index.mjs",
+    "start": "node ./src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "@google-cloud/firestore": "^7.9.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.3.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
-  }
+  },
+  "type": "module"
 }
