@@ -1,4 +1,15 @@
 // src/controllers/WisataController.js
+export async function getAllWisataData(req, res, db) {
+  try {
+    const snapshot = await db.collection("wisata").get();
+    const data = snapshot.docs.map((doc) => doc.data());
+    res.send(data);
+  } catch (error) {
+    console.error("Error connecting to Firestore:", error);
+    res.status(500).send("Error connecting to Firestore");
+  }
+}
+
 export async function getListWisata(req, res, db) {
   try {
     const snapshot = await db.collection("wisata").get();

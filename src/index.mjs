@@ -1,6 +1,7 @@
 // src/index.mjs
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 import { initializeFirebase } from "./services/firebaseService.js";
 import wisataRoutes from "./routes/wisataRoutes.js";
 
@@ -13,6 +14,9 @@ async function startServer() {
 
     // Enable CORS for all origins
     app.use(cors());
+
+    // Use body-parser middleware
+    app.use(bodyParser.json());
 
     // Root route
     app.get("/", (req, res) => {
