@@ -21,7 +21,7 @@ async function startServer() {
 
     // Root route
     app.get("/", (req, res) => {
-      res.send("Welcome to the Wisata API. Use /wisata to access the API.");
+      res.send("Welcome Informasi Desa Batukaras API.");
     });
 
     // API routes
