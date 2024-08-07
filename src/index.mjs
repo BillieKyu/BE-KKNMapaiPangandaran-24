@@ -1,5 +1,6 @@
-// src/index.js
+// src/index.mjs
 import express from "express";
+import cors from "cors";
 import { initializeFirebase } from "./services/firebaseService.js";
 import wisataRoutes from "./routes/wisataRoutes.js";
 
@@ -9,6 +10,9 @@ async function startServer() {
 
     const app = express();
     const port = process.env.PORT || 3000;
+
+    // Enable CORS for all origins
+    app.use(cors());
 
     // Root route
     app.get("/", (req, res) => {
