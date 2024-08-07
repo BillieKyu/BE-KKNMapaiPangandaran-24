@@ -4,6 +4,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import { initializeFirebase } from "./services/firebaseService.js";
 import wisataRoutes from "./routes/wisataRoutes.js";
+import acaraBudayaRoutes from "./routes/acaraBudayaRoutes.js";
 
 async function startServer() {
   try {
@@ -25,6 +26,7 @@ async function startServer() {
 
     // API routes
     app.use("/wisata", wisataRoutes(db));
+    app.use("/acarabudaya", acaraBudayaRoutes(db));
 
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
