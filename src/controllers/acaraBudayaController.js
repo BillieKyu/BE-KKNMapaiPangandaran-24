@@ -14,8 +14,8 @@ export async function getListAcaraBudaya(req, res, db) {
   try {
     const snapshot = await db.collection("acarabudaya").get();
     const data = snapshot.docs.map((doc) => {
-      const { title, imageUtama } = doc.data();
-      return { title, imageUtama };
+      const { title, imageUtama, tag } = doc.data();
+      return { id: doc.id, title, imageUtama, tag };
     });
     res.send(data);
   } catch (error) {

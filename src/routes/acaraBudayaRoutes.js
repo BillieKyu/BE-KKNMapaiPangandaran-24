@@ -5,6 +5,7 @@ import {
   getListAcaraBudaya,
   getAcaraBudayaByID,
 } from "../controllers/acaraBudayaController.js";
+import { createAcaraBudaya } from "../controllers/acaraBudayaPost.js";
 
 const router = express.Router();
 
@@ -14,6 +15,9 @@ export default function (db) {
 
   // Get all data
   router.get("/all", (req, res) => getAllAcaraBudayaData(req, res, db));
+
+  // Create a new acara & budaya
+  router.post("/post", (req, res) => createAcaraBudaya(req, res, db));
 
   // Get specific acara & budaya details
   router.get("/:id", (req, res) => getAcaraBudayaByID(req, res, db));

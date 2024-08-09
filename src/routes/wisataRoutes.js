@@ -26,12 +26,12 @@ export default function (db) {
   router.get("/:id", (req, res) => getWisataByID(req, res, db));
 
   // Get imageUtama for a specific wisata
-  router.get("/:id/imageUtama", (req, res) =>
+  router.get("/imageUtama/:id", (req, res) =>
     getImageUtamaWisata(req, res, db)
   );
 
   // Get galeri for a specific wisata
-  router.get("/:id/galeri", (req, res) => getGaleriWisata(req, res, db));
+  router.get("/galeri/:id", (req, res) => getGaleriWisata(req, res, db));
 
   return router;
 }

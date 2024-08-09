@@ -15,7 +15,7 @@ export async function getListWisata(req, res, db) {
     const snapshot = await db.collection("wisata").get();
     const data = snapshot.docs.map((doc) => {
       const { title, alamat, imageUtama } = doc.data();
-      return { title, alamat, imageUtama };
+      return { id: doc.id, title, alamat, imageUtama };
     });
     res.send(data);
   } catch (error) {
